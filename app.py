@@ -3,6 +3,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from langdetect import detect
+import os
+from app import apps
 
 app = Flask(__name__)
 
@@ -50,4 +52,5 @@ def upload_file():
     return render_template('results.html', result=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 4000))
+    app.run(debug=False,host="0.0.0.0", port=port)
