@@ -4,7 +4,6 @@ import requests
 from bs4 import BeautifulSoup
 from langdetect import detect
 import os
-from app import apps
 
 app = Flask(__name__)
 
